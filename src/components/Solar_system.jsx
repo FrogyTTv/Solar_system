@@ -14,10 +14,8 @@ const Solar_system = () => {
 
     useGSAP(() => {
 
-        if (!videoRef.current) return
-
+    if (!videoRef.current) return
         const startValue = isMobile ? 'top 50%' : 'center 50%'
-
         const scrollLength = isMobile ? 2000 : 8000;
 
         let tl = gsap.timeline({
@@ -32,12 +30,103 @@ const Solar_system = () => {
         })
 
         videoRef.current.onloadedmetadata = () => {
-            tl.to(videoRef.current, {
-                currentTime: videoRef.current.duration,
+
+            const duration = videoRef.current.duration
+
+            tl
+
+            // play first part
+            .to(videoRef.current, {
+                currentTime: duration * 0.125,
+                duration: 1
+            })
+
+            // pause for scroll
+            .to(videoRef.current, {
+                currentTime: duration * 0.125,
+                duration: 0.5
+            })
+
+            // play again
+            .to(videoRef.current, {
+                currentTime: duration * 0.24,
+                duration: 1
+            })
+
+            // another pause
+            .to(videoRef.current, {
+                currentTime: duration * 0.24,
+                duration: 0.5
+            })
+
+            // play again
+            .to(videoRef.current, {
+                currentTime: duration * 0.36,
+                duration: 1
+            })
+
+            // another pause
+            .to(videoRef.current, {
+                currentTime: duration * 0.36,
+                duration: 0.5
+            })
+
+            // play again
+            .to(videoRef.current, {
+                currentTime: duration * 0.48,
+                duration: 1
+            })
+
+            // another pause
+            .to(videoRef.current, {
+                currentTime: duration * 0.48,
+                duration: 0.5
+            })
+
+            // play again
+            .to(videoRef.current, {
+                currentTime: duration * 0.6,
+                duration: 1
+            })
+
+            // another pause
+            .to(videoRef.current, {
+                currentTime: duration * 0.6,
+                duration: 0.5
+            })
+
+            // play again
+            .to(videoRef.current, {
+                currentTime: duration * 0.87,
+                duration: 1
+            })
+
+            // another pause
+            .to(videoRef.current, {
+                currentTime: duration * 0.87,
+                duration: 0.5
+            })
+
+            // play again
+            .to(videoRef.current, {
+                currentTime: duration * 0.97,
+                duration: 1
+            })
+
+            // another pause
+            .to(videoRef.current, {
+                currentTime: duration * 0.97,
+                duration: 0.5
+            })
+
+            // finish video
+            .to(videoRef.current, {
+                currentTime: duration,
+                duration: 1
             })
         }
 
-    }, [])
+    }, [isMobile])
 
     return (
         <div className="solar_video">
