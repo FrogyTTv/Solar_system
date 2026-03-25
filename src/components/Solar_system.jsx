@@ -3,6 +3,7 @@ import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useGSAP } from "@gsap/react"
 import { useMediaQuery } from "react-responsive"
+import Planet_info from './Planet_info'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -137,6 +138,7 @@ const Solar_system = () => {
                 ref={videoRef}
                 src="videos/Solar_system.mp4"
             />
+            <Planet_info title={'Mercury'} number={1} describtion='Here is the describtion. YOyoyoyoyo' />
         </div>
     )
 }

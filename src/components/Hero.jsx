@@ -18,7 +18,7 @@ const Hero = () => {
 
   return (
     <section className='hero_section'>
-        <video autoPlay muted loop className='hero_video' src="videos/Hero_video.mp4"></video>
+        <video autoPlay muted loop className='full_video' src="videos/Hero_video.mp4"></video>
         <div className="hero_wrapper">
             <h1 className='hero_title'>The Solar System</h1>
             <div className="hero_text">
