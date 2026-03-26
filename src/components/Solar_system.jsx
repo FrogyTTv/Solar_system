@@ -48,171 +48,45 @@ const Solar_system = () => {
             },
         })
 
-        videoRef.current.onloadedmetadata = () => {
-
+        function pauseShowPlayHide(pauseMoment, playMoment, planetRefrence) {
             const duration = videoRef.current.duration
 
-            tl
+            return tl
+                .to(videoRef.current, {
+                    currentTime: duration * pauseMoment,
+                    duration: 0.5
+                })
+                .to(planetRefrence.current, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.3
+                }, "<")
 
-            // play first part
-            .to(videoRef.current, {
+                .to(videoRef.current, {
+                    currentTime: duration * playMoment,
+                    duration: 1
+                })
+                .to(planetRefrence.current, {
+                    opacity: 0,
+                    y: 0,
+                    duration: 0.3
+                }, "<")
+        }
+
+        videoRef.current.onloadedmetadata = () => {
+            const duration = videoRef.current.duration
+
+            tl.to(videoRef.current, {
                 currentTime: duration * 0.125,
                 duration: 1
             })
-
-            // pause for scroll + show mercury
-            .to(videoRef.current, {
-                currentTime: duration * 0.125,
-                duration: 0.5
-            })
-            .to(mercuryRef.current, {
-                opacity: 1,
-                y: 0,
-                duration: 0.3
-            }, "<") // start at same time
-
-            // play again
-            .to(videoRef.current, {
-                currentTime: duration * 0.24,
-                duration: 1
-            })
-
-            .to(mercuryRef.current, {
-                opacity: 0,
-                y: 0,
-                duration: 0.3
-            }, "<") // start at same time
-            // another pause
-            .to(videoRef.current, {
-                currentTime: duration * 0.24,
-                duration: 0.5
-            })
-            .to(venusRef.current, {
-                opacity: 1,
-                y: 0,
-                duration: 0.3
-            }, "<") // start at same time
-
-            // play again
-            .to(videoRef.current, {
-                currentTime: duration * 0.36,
-                duration: 1
-            })
-            .to(venusRef.current, {
-                opacity: 0,
-                y: 0,
-                duration: 0.3
-            }, "<") // start at same time
-
-            // another pause
-            .to(videoRef.current, {
-                currentTime: duration * 0.36,
-                duration: 0.5
-            })
-            .to(earthRef.current, {
-                opacity: 1,
-                y: 0,
-                duration: 0.3
-            }, "<") // start at same time
-
-            // play again
-            .to(videoRef.current, {
-                currentTime: duration * 0.48,
-                duration: 1
-            })
-            .to(earthRef.current, {
-                opacity: 0,
-                y: 0,
-                duration: 0.3
-            }, "<") // start at same time
-
-            // another pause
-            .to(videoRef.current, {
-                currentTime: duration * 0.48,
-                duration: 0.5
-            })
-            .to(marsRef.current, {
-                opacity: 1,
-                y: 0,
-                duration: 0.3
-            }, "<") // start at same time
-
-            // play again
-            .to(videoRef.current, {
-                currentTime: duration * 0.6,
-                duration: 1
-            })
-            .to(marsRef.current, {
-                opacity: 0,
-                y: 0,
-                duration: 0.3
-            }, "<") // start at same time
-
-            // another pause
-            .to(videoRef.current, {
-                currentTime: duration * 0.6,
-                duration: 0.5
-            })
-            .to(jupiterRef.current, {
-                opacity: 1,
-                y: 0,
-                duration: 0.3
-            }, "<") // start at same time
-
-            // play again
-            .to(videoRef.current, {
-                currentTime: duration * 0.87,
-                duration: 1
-            })
-            .to(jupiterRef.current, {
-                opacity: 0,
-                y: 0,
-                duration: 0.3
-            }, "<") // start at same time
-
-            // another pause
-            .to(videoRef.current, {
-                currentTime: duration * 0.87,
-                duration: 0.5
-            })
-            .to(saturnRef.current, {
-                opacity: 1,
-                y: 0,
-                duration: 0.3
-            }, "<") // start at same time
-
-            // play again
-            .to(videoRef.current, {
-                currentTime: duration * 0.97,
-                duration: 1
-            })
-            .to(saturnRef.current, {
-                opacity: 0,
-                y: 0,
-                duration: 0.3
-            }, "<") // start at same time
-
-            // another pause
-            .to(videoRef.current, {
-                currentTime: duration * 0.97,
-                duration: 0.5
-            })
-            .to(uranusRef.current, {
-                opacity: 1,
-                y: 0,
-                duration: 0.3
-            }, "<") // start at same time
-
-            // finish video
-            .to(videoRef.current, {
-                currentTime: duration,
-                duration: 1
-            })
-            .to(uranusRef.current, {
-                opacity: 0,
-                y: 0,
-                duration: 0.3
-            }, "<") // start at same time
+            pauseShowPlayHide(0.125, 0.24, mercuryRef)
+            pauseShowPlayHide(0.24, 0.36, venusRef)
+            pauseShowPlayHide(0.36, 0.48, earthRef)
+            pauseShowPlayHide(0.48, 0.6, marsRef)
+            pauseShowPlayHide(0.6, 0.87, jupiterRef)
+            pauseShowPlayHide(0.87, 0.97, saturnRef)
+            pauseShowPlayHide(0.97, 1, uranusRef)
         }
 
     }, [isMobile])
