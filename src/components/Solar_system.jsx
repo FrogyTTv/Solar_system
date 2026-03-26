@@ -19,6 +19,8 @@ const Solar_system = () => {
     const saturnRef = useRef(null)
     const uranusRef = useRef(null)
 
+    const planets = [ mercuryRef, venusRef, earthRef, marsRef, jupiterRef, saturnRef, uranusRef]
+
     const isMobile = useMediaQuery({ maxWidth: 767 })
 
     useGSAP(() => {
@@ -27,10 +29,13 @@ const Solar_system = () => {
         const startValue = isMobile ? 'top 50%' : 'center 50%'
         const scrollLength = isMobile ? 2000 : 8000;
 
-        gsap.set(mercuryRef.current, {
-            opacity: 0,
-            y: 50
-        })
+        planets.forEach(element => {
+            gsap.set(element.current, {
+                opacity: 0,
+                y: 50
+            })
+        });
+
 
         let tl = gsap.timeline({
             scrollTrigger: {
@@ -41,35 +46,6 @@ const Solar_system = () => {
                 pin: true,
                 // markers: true,
             },
-        })
-
-        gsap.set(mercuryRef.current, {
-            opacity: 0,
-            y: 50
-        })
-        gsap.set(venusRef.current, {
-            opacity: 0,
-            y: 50
-        })
-        gsap.set(earthRef.current, {
-            opacity: 0,
-            y: 50
-        })
-        gsap.set(marsRef.current, {
-            opacity: 0,
-            y: 50
-        })
-        gsap.set(jupiterRef.current, {
-            opacity: 0,
-            y: 50
-        })
-        gsap.set(saturnRef.current, {
-            opacity: 0,
-            y: 50
-        })
-        gsap.set(uranusRef.current, {
-            opacity: 0,
-            y: 50
         })
 
         videoRef.current.onloadedmetadata = () => {
