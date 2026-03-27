@@ -7,7 +7,7 @@ const Planet_info = forwardRef(
         <div className="wrapper">
           <div className="left_aligned_info">
             <h2>{title}</h2>
-            <h4>#{number}</h4>
+            <h4>0{number}</h4>
           </div>
           <p>{description}</p>
         </div>
