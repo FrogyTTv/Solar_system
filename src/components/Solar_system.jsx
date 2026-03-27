@@ -57,6 +57,7 @@ const Solar_system = () => {
                     duration: 0.5
                 })
                 .to(planetRefrence.current, {
+                    zIndex: 5,
                     opacity: 1,
                     y: 0,
                     duration: 0.3
@@ -67,6 +68,7 @@ const Solar_system = () => {
                     duration: 1
                 })
                 .to(planetRefrence.current, {
+                    zIndex: 1,
                     opacity: 0,
                     y: 0,
                     duration: 0.3
@@ -80,6 +82,7 @@ const Solar_system = () => {
                 currentTime: duration * 0.125,
                 duration: 1
             })
+
             pauseShowPlayHide(0.125, 0.24, mercuryRef)
             pauseShowPlayHide(0.24, 0.36, venusRef)
             pauseShowPlayHide(0.36, 0.48, earthRef)
@@ -100,13 +103,13 @@ const Solar_system = () => {
                 ref={videoRef}
                 src="videos/Solar_system.mp4"
             />
-            <Planet_info ref={mercuryRef} title={'Mercury'} number={1} description='Here is the describtion. YOyoyoyoyo' />
-            <Planet_info ref={venusRef} title={'Venus'} number={2} description='HALLLAAA' />
-            <Planet_info ref={earthRef} title={'Earf'} number={3} description='HALLLAAA' />
-            <Planet_info ref={marsRef} title={'Mars'} number={3} description='HALLLAAA' />
-            <Planet_info ref={jupiterRef} title={'Jupiter'} number={3} description='HALLLAAA' />
-            <Planet_info ref={saturnRef} title={'Saturn'} number={3} description='HALLLAAA' />
-            <Planet_info ref={uranusRef} title={'Uranus'} number={3} description='HALLLAAA' />
+            <Planet_info ref={mercuryRef} title={'Mercury'} number={1} description='Mercury is the smallest planet and the closest to the Sun, with a surface covered in craters like Earth’s Moon. It has almost no atmosphere, so temperatures change drastically between day and night.' />
+            <Planet_info ref={venusRef} title={'Venus'} number={2} description='Venus is similar in size to Earth but has a thick, toxic atmosphere that traps heat, making it the hottest planet. Its surface is covered with volcanoes and is hidden beneath dense clouds.' />
+            <Planet_info ref={earthRef} title={'Earf'} number={3} description='Earth is the only known planet that supports life, thanks to its liquid water and breathable atmosphere. It has a balanced climate and a protective magnetic field.' />
+            <Planet_info ref={marsRef} title={'Mars'} number={4} description='Mars is often called the “Red Planet” because of its rusty, iron-rich soil. It has the largest volcano and canyon in the solar system and may have once had liquid water.' />
+            <Planet_info ref={jupiterRef} title={'Jupiter'} number={5} description='Jupiter is the largest planet, known for its massive size and strong storms like the Great Red Spot. It is a gas giant made mostly of hydrogen and helium.' />
+            <Planet_info ref={saturnRef} title={'Saturn'} number={6} description='Saturn is famous for its beautiful rings made of ice and rock. It is a gas giant with many moons, including Titan, which has a thick atmosphere.' />
+            <Planet_info ref={uranusRef} title={'Uranus'} number={7} description='Uranus is an ice giant that rotates on its side, making its seasons very unusual. It has a pale blue color due to methane gas in its atmosphere.' />
         </div>
     )
 }
