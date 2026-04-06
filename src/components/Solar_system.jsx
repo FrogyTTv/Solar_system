@@ -50,7 +50,14 @@ const Solar_system = () => {
         end: `+=${scrollLength}`,
         scrub: true,
         pin: true,
-        // markers: true,
+        onLeave: () => {
+          // Set to 0 and hide immediately when scrolling past end
+          gsap.set(videoRef.current, { opacity: 0 });
+        },
+        onEnterBack: () => {
+          gsap.set(videoRef.current, { opacity: 1 });
+        },
+        markers: true,
       },
     });
 
@@ -92,6 +99,7 @@ const Solar_system = () => {
       const duration = videoRef.current.duration;
 
       solarTl.to(videoRef.current, {
+        opacity: 1,
         currentTime: duration * 0.125,
         duration: 1,
       });
@@ -109,7 +117,7 @@ const Solar_system = () => {
       scrollTrigger: {
         trigger: neptuneVideoRef.current,
         start: "center 50%",
-        end: "+=4000",
+        end: "+=1500",
         scrub: true,
         pin: true,
         markers: true,
