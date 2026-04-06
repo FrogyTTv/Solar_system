@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Solar_system = () => {
   const videoRef = useRef(null);
-  const neptunVideoRef = useRef(null);
+  const neptuneVideoRef = useRef(null);
 
   const mercuryRef = useRef(null);
   const venusRef = useRef(null);
@@ -104,6 +104,26 @@ const Solar_system = () => {
       pauseShowPlayHide(0.87, 0.97, saturnRef);
       pauseShowPlayHide(0.97, 1, uranusRef);
     };
+
+    let neptuneTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: neptuneVideoRef.current,
+        start: "center 50%",
+        end: "+=4000",
+        scrub: true,
+        pin: true,
+        markers: true,
+      },
+    });
+
+    neptuneVideoRef.current.onloadedmetadata = () => {
+      const duration = neptuneVideoRef.current.duration;
+
+      neptuneTl.to(neptuneVideoRef.current, {
+        currentTime: duration,
+        duration: 1,
+      });
+    };
   }, [isMobile]);
 
   return (
@@ -161,8 +181,9 @@ const Solar_system = () => {
         muted
         playsInline
         preload="auto"
-        ref={neptunVideoRef}
+        ref={neptuneVideoRef}
         src="videos/neptun.mp4"
+        id="neptune_video"
       />
     </div>
   );
