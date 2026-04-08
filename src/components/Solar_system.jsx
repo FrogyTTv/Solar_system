@@ -78,7 +78,7 @@ const Solar_system = () => {
         .to(
           planetRefrence.current,
           {
-            zIndex: 5,
+            zIndex: 1,
             opacity: 1,
             y: 0,
             duration: 0.3,
@@ -124,7 +124,7 @@ const Solar_system = () => {
       scrollTrigger: {
         trigger: neptuneVideoRef.current,
         start: "center 50%",
-        end: "+=1500",
+        end: "+=2000",
         scrub: true,
         pin: true,
         invalidateOnRefresh: true,
@@ -136,23 +136,25 @@ const Solar_system = () => {
       const duration = neptuneVideoRef.current.duration;
 
       neptuneTl
-        .to(neptuneVideoRef.current, {
-          currentTime: duration,
-          duration: 1,
+        .to(neptuneRef.current, {
+          zIndex: 5,
+          opacity: 1,
+          y: 0,
+          duration: 0.3,
         })
         .to(
-          neptuneRef.current,
+          neptuneVideoRef.current,
           {
-            zIndex: 5,
-            opacity: 1,
-            y: 0,
-            duration: 0.3,
+            currentTime: duration,
+            duration: 1,
           },
           "<",
         )
+
         .to(neptuneRef.current, {
           opacity: 0,
-          duration: 0.3,
+          duration: 0.5,
+          zIndex: -1,
         });
     };
   }, [isMobile]);
