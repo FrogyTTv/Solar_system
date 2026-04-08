@@ -19,6 +19,8 @@ const Solar_system = () => {
   const saturnRef = useRef(null);
   const uranusRef = useRef(null);
 
+  const neptuneRef = useRef(null);
+
   const planets = [
     mercuryRef,
     venusRef,
@@ -43,6 +45,11 @@ const Solar_system = () => {
       });
     });
 
+    gsap.set(neptuneRef.current, {
+      opacity: 0,
+      y: 50,
+    });
+
     let solarTl = gsap.timeline({
       scrollTrigger: {
         trigger: videoRef.current,
@@ -57,7 +64,7 @@ const Solar_system = () => {
         onEnterBack: () => {
           gsap.set(videoRef.current, { opacity: 1 });
         },
-        markers: true,
+        // markers: true,
       },
     });
 
@@ -86,7 +93,7 @@ const Solar_system = () => {
         .to(
           planetRefrence.current,
           {
-            zIndex: 1,
+            zIndex: 0,
             opacity: 0,
             y: 0,
             duration: 0.3,
@@ -120,17 +127,33 @@ const Solar_system = () => {
         end: "+=1500",
         scrub: true,
         pin: true,
-        markers: true,
+        invalidateOnRefresh: true,
+        // markers: true,
       },
     });
 
     neptuneVideoRef.current.onloadedmetadata = () => {
       const duration = neptuneVideoRef.current.duration;
 
-      neptuneTl.to(neptuneVideoRef.current, {
-        currentTime: duration,
-        duration: 1,
-      });
+      neptuneTl
+        .to(neptuneVideoRef.current, {
+          currentTime: duration,
+          duration: 1,
+        })
+        .to(
+          neptuneRef.current,
+          {
+            zIndex: 5,
+            opacity: 1,
+            y: 0,
+            duration: 0.3,
+          },
+          "<",
+        )
+        .to(neptuneRef.current, {
+          opacity: 0,
+          duration: 0.3,
+        });
     };
   }, [isMobile]);
 
@@ -185,14 +208,24 @@ const Solar_system = () => {
         number={7}
         description="Uranus is an ice giant that rotates on its side, making its seasons very unusual. It has a pale blue color due to methane gas in its atmosphere."
       />
-      <video
-        muted
-        playsInline
-        preload="auto"
-        ref={neptuneVideoRef}
-        src="videos/neptun.mp4"
-        id="neptune_video"
-      />
+      <div className="neptunePlanet">
+        <video
+          muted
+          playsInline
+          preload="auto"
+          ref={neptuneVideoRef}
+          src="videos/neptun.mp4"
+          id="neptune_video"
+        />
+        <div ref={neptuneRef} className="neptuneInfo">
+          <h2>Neptune</h2>
+          <p>
+            Neptune is known for its deep blue color and strong winds. It is an
+            ice giant with several moons, including Triton, which orbits in the
+            opposite direction of the planet’s rotation.
+          </p>
+        </div>
+      </div>
     </div>
   );
 };
