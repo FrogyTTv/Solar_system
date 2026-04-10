@@ -222,11 +222,24 @@ p {
 }
 
 footer {
+  margin-top: 70vh;
   position: relative;
   height: 30rem;
-  background-color: gray;
+  /* background-color: green; */
+  background-color: black;
+  padding-top: 1rem;
 }
 .footer_wrapper {
+  display: flex;
+  border-top: 2px solid #3E3E3E;
+  margin-inline: 3rem;
+  padding-inline: 1rem;
+  padding-block: 4rem;
+  /* background-color: red; */
+  height: 100%;
+  align-items: end;
+  gap: 2rem;
+  justify-content: space-between;
 }
 
 .logo_section {
@@ -242,4 +255,49 @@ footer {
   /* background-color: red; */
 }
 .logo_describtion {
+  /* background-color: red; */
+}
+
+.nav_section {
+  display: flex;
+  /* background-color: green; */
+  height: 80%;
+  align-items: center;
+  align-self: center;
+  /* gap: 8rem; */
+  width: 100%;
+  max-width: 40rem;
+  justify-content: space-between;
+  /* padding-inline: 1rem; */
+}
+
+.nav_column {
+  display: flex;
+  flex-direction: column;
+  height: inherit;
+  justify-content: space-between;
+  /* background-color: red; */
+  list-style: none;
+}
+
+.bold_p {
+  font-weight: 700;
+}
+
+.socials_section {
+  display: flex;
+  flex-direction: column;
+  /* background-color: red; */
+  height: inherit;
+  justify-content: center;
+  gap: 1rem;
+  & ul {
+    display: flex;
+    gap: .5rem;
+    list-style: none;
+  }
+}
+
+.socials_section ul img {
+  width: 2rem;
 }

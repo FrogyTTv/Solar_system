@@ -33,11 +33,41 @@ function Footer() {
           </p>
         </div>
         <div className="nav_section">
-          {/* <div className="nav_column"></div>
-          <div className="nav_column"></div>
-          <div className="nav_column"></div> */}
+          <ul className="nav_column">
+            <li>Home</li>
+            <li>News & Events</li>
+            <li>Multimedia</li>
+            <li>NASA+</li>
+            <li>Missions</li>
+          </ul>
+
+          <ul className="nav_column">
+            <li>Humans in Space</li>
+            <li>Earth</li>
+            <li>The Solar System</li>
+            <li>The Universe</li>
+            <li>Science</li>
+          </ul>
+          <ul className="nav_column">
+            <li>Aeronautics</li>
+            <li>Technology</li>
+            <li>Learning Resources</li>
+            <li>About NASA</li>
+            <li>NASA en Espanol</li>
+          </ul>
+
         </div>
-        <div className="socials_section"></div>
+        <div className="socials_section">
+          <p className="bold_p">Follow NASA</p>
+          <ul>
+            <li><img src="https://cdn-icons-png.flaticon.com/512/5968/5968764.png" alt="" /></li>
+            <li><img src="https://cdn-icons-png.flaticon.com/512/4138/4138124.png" alt="" /></li>
+            <li><img src="https://pngimg.com/d/x_logo_PNG19.png" alt="" /></li>
+            <li><img src="https://static.vecteezy.com/system/resources/previews/023/986/704/non_2x/youtube-logo-youtube-logo-transparent-youtube-icon-transparent-free-free-png.png" alt="" /></li>
+          </ul>
+          <p>More NASA Social Accounts</p>
+          <p>NASA Newsletters</p>
+        </div>
       </div>
     </footer>
   );

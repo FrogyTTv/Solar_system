@@ -127,7 +127,7 @@ const Solar_system = () => {
         end: "+=2000",
         scrub: true,
         pin: true,
-        invalidateOnRefresh: true,
+        pinSpacing: false,
         // markers: true,
       },
     });
@@ -142,20 +142,16 @@ const Solar_system = () => {
           y: 0,
           duration: 0.3,
         })
-        .to(
-          neptuneVideoRef.current,
-          {
+        .to(neptuneVideoRef.current, {
             currentTime: duration,
             duration: 1,
-          },
-          "<",
-        )
+        }, "<")
 
         .to(neptuneRef.current, {
-          opacity: 0,
-          duration: 0.5,
-          zIndex: -1,
-        });
+            opacity: 0,
+            duration: 0.3,
+            zIndex: -1,
+        }, "-=0.4"); // starts 0.7s earlier
     };
   }, [isMobile]);
 
