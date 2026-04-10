@@ -178,7 +178,7 @@ const Solar_system = () => {
       />
       <Planet_info
         ref={earthRef}
-        title={"Earf"}
+        title={"Earth"}
         number={3}
         description="Earth is the only known planet that supports life, thanks to its liquid water and breathable atmosphere. It has a balanced climate and a protective magnetic field."
       />

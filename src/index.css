@@ -215,17 +215,15 @@ p {
     text-align: right;
     font-size: 1.15;
     max-width: 28rem;
-    /* background-color: #0000007a; */
     padding: 0.5rem;
     border-radius: 0.3rem;
   }
 }
 
 footer {
-  margin-top: 70vh;
+  margin-top: 75vh;
   position: relative;
   height: 30rem;
-  /* background-color: green; */
   background-color: black;
   padding-top: 1rem;
 }
@@ -235,7 +233,6 @@ footer {
   margin-inline: 3rem;
   padding-inline: 1rem;
   padding-block: 4rem;
-  /* background-color: red; */
   height: 100%;
   align-items: end;
   gap: 2rem;
@@ -252,23 +249,18 @@ footer {
   max-width: 10rem;
   color: white;
   height: fit-content;
-  /* background-color: red; */
 }
 .logo_describtion {
-  /* background-color: red; */
 }
 
 .nav_section {
   display: flex;
-  /* background-color: green; */
   height: 80%;
   align-items: center;
   align-self: center;
-  /* gap: 8rem; */
   width: 100%;
   max-width: 40rem;
   justify-content: space-between;
-  /* padding-inline: 1rem; */
 }
 
 .nav_column {
@@ -276,7 +268,6 @@ footer {
   flex-direction: column;
   height: inherit;
   justify-content: space-between;
-  /* background-color: red; */
   list-style: none;
 }
 
@@ -287,7 +278,6 @@ footer {
 .socials_section {
   display: flex;
   flex-direction: column;
-  /* background-color: red; */
   height: inherit;
   justify-content: center;
   gap: 1rem;
