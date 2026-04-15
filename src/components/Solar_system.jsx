@@ -95,7 +95,7 @@ const Solar_system = () => {
           {
             zIndex: 0,
             opacity: 0,
-            y: 0,
+            y: -50,
             duration: 0.3,
           },
           "<",
@@ -142,16 +142,25 @@ const Solar_system = () => {
           y: 0,
           duration: 0.3,
         })
-        .to(neptuneVideoRef.current, {
+        .to(
+          neptuneVideoRef.current,
+          {
             currentTime: duration,
             duration: 1,
-        }, "<")
+          },
+          "<",
+        )
 
-        .to(neptuneRef.current, {
+        .to(
+          neptuneRef.current,
+          {
             opacity: 0,
+            y: -50,
             duration: 0.3,
             zIndex: -1,
-        }, "-=0.4"); // starts 0.7s earlier
+          },
+          "-=0.4",
+        ); // starts 0.7s earlier
     };
   }, [isMobile]);
 

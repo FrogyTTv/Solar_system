@@ -170,7 +170,8 @@ p {
       bottom: 0px;
       left: 0;
       width: 100%;
-      height: 20%;
+      height: 50%;
+      transform: translateY(3rem);
 
       background: linear-gradient(
         to top,
@@ -231,7 +232,7 @@ footer {
   --offset_from_bottom: 1rem;
   margin-top: 80vh;
   position: relative;
-  height: 21rem;
+  height: 20rem;
   background-color: black;
   padding-top: 2.5rem;
 }
@@ -259,29 +260,21 @@ footer {
   color: white;
   height: fit-content;
 }
-.logo_describtion {
-}
 
 .nav_section {
   display: flex;
-  /* height: 100%; */
   align-items: center;
   align-self: end;
-  gap: 5rem;
-  /* width: 100%; */
-  /* max-width: 40rem; */
-  /* justify-content: space-between; */
-  /* background-color: blue; */
+  gap: 7rem;
   margin-bottom: var(--offset_from_bottom);
 }
 
 .nav_column {
   display: flex;
   flex-direction: column;
-  /* height: inherit; */
   justify-content: space-between;
   list-style: none;
-  gap: 1.5rem;
+  gap: 1rem;
   & li {
     cursor: pointer;
     &:hover {
@@ -299,7 +292,7 @@ footer {
   flex-direction: column;
   justify-content: end;
   margin-bottom: var(--offset_from_bottom);
-  gap: 1.5rem;
+  gap: 1rem;
   & p {
     font-size: 0.9rem;
   }
@@ -312,9 +305,10 @@ footer {
 
 .socials_section ul img {
   width: 2rem;
+  cursor: pointer;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1250px) {
   .footer_wrapper {
     flex-wrap: wrap;
   }
