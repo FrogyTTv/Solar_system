@@ -1,3 +1,12 @@
+@font-face {
+  font-family: "Integral CF Demi Bold";
+  src: url(../public/fonts/Integral\ CF\ Demibold\ Font.otf);
+}
+@font-face {
+  font-family: "Integral CF Extra Bold";
+  src: url(../public/fonts/Integral\ CF\ ExtraBold\ Font.otf);
+}
+
 * {
   --black-color: #000;
 
@@ -7,8 +16,6 @@
   font-family: "SF Pro", Arial, Helvetica, sans-serif;
 }
 
-@import url(https://github.com/FrogyTTv/Sorby-Website/tree/main/Resources/Fonts);
-
 body {
   background-color: black;
   color: white;
@@ -16,7 +23,7 @@ body {
 h1,
 h2,
 h3 {
-  font-family: "FONTSPRING DEMO - Integral CF Extra Bold";
+  font-family: "Integral CF Extra Bold";
 }
 
 p {
@@ -31,7 +38,7 @@ p {
   font-size: 5.3rem;
   align-self: center;
   text-align: center;
-  font-family: "FONTSPRING DEMO - Integral CF Demi Bold";
+  font-family: "Integral CF Demi Bold";
 }
 .hero_section {
   z-index: 5;
