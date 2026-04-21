@@ -23,7 +23,8 @@ const Hero = () => {
         muted
         loop
         className="full_video"
-        src="videos/Hero_video.mp4"
+        src="https://xn--srby-gra.com/film/solar_Hero_video.mp4"
+        // src="videos/Hero_video.mp4"
       ></video>
       <div className="hero_wrapper">
         <h1 className="hero_title">The Solar System</h1>

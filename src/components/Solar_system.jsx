@@ -171,7 +171,8 @@ const Solar_system = () => {
         playsInline
         preload="auto"
         ref={videoRef}
-        src="videos/Solar_system.mp4"
+        src="https://xn--srby-gra.com/film/Solar_system.mp4"
+        // src="videos/Solar_system.mp4"
       />
       <Planet_info
         ref={mercuryRef}
